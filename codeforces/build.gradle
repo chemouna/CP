@@ -1,0 +1,16 @@
+apply plugin: 'org.jetbrains.kotlin.platform.jvm'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //implementation deps.kotlin.stdlib.jdk
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:+"
+
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
