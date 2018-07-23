@@ -1,61 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.51'
     ext.kotlin_version = '1.2.50'
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0-alpha01'
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha03'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
-
-    ext.versions = [
-            'supportLibrary'     : '27.0.2',
-            'atsl'               : '1.0.1',
-            'kotlin'             : '1.2.30-eap-47',
-            'kotlinCoroutines'   : '0.22.2',
-            'kotlinSerialization': '0.4',
-            'okhttp'             : '3.9.1',
-            'retrofit'           : '2.3.0',
-            'kotshi'             : '1.1.0-SNAPSHOT',
-            'dagger'             : '2.14.1',
-            'rxbinding'          : '2.1.1',
-    ]
-
-    ext.deps = [
-            'kotlin'  : [
-                    'stdlib': [
-                            'common': "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
-                            'jdk'   : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
-                    ]
-
-            ],
-            'android' : [
-
-            ],
-            'retrofit': [
-                    'client'                       : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
-                    'adapterKotlinCoroutines'      : 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0',
-                    'converterKotlinxSerialization': 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.0.1',
-                    'converterMoshi'               : "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
-            ],
-            'rx'      : [
-                    'java'   : 'io.reactivex.rxjava2:rxjava:2.1.9',
-                    'android': 'io.reactivex.rxjava2:rxandroid:2.0.2',
-                    'binding': [
-                            'framework'   : "com.jakewharton.rxbinding2:rxbinding-kotlin:${versions.rxbinding}",
-                            'recyclerview': "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:${versions.rxbinding}",
-                    ],
-            ],
-            'dagger'  : [
-                    'runtime' : "com.google.dagger:dagger:${versions.dagger}",
-                    'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
-            ]
-
-    ]
 
 }
 apply plugin: 'kotlin'
@@ -72,7 +26,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:"
+    //compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:jre8-1.2.50"
 }
 compileKotlin {
     kotlinOptions {
